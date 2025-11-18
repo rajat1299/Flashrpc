@@ -34,3 +34,7 @@ def run_server():
 
 async def run_client():
 
+    # Give server a moment to start
+
+    await asyncio.sleep(1)
+
