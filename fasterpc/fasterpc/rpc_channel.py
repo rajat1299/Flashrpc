@@ -2,7 +2,7 @@ import asyncio
 
 from inspect import _empty, getmembers, ismethod, signature
 
-from typing import Any, Dict, List
+from typing import Any, Callable, Dict, List
 
 from pydantic import ValidationError
 
@@ -19,6 +19,12 @@ from .utils import gen_uid, pydantic_parse
 
 
 logger = get_logger("RPC_CHANNEL")
+
+
+
+OnConnectCallback = Callable[['RpcChannel'], Any]
+
+OnDisconnectCallback = Callable[['RpcChannel'], Any]
 
 
 
