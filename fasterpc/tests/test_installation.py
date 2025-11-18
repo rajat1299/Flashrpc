@@ -64,3 +64,7 @@ if __name__ == "__main__":
 
         print("✅ Test Passed Successfully")
 
+    finally:
+
+        p.kill()
+
