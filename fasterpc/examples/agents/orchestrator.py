@@ -54,3 +54,5 @@ if __name__ == "__main__":
 
     except OSError:
 
+        print("❌ Could not connect to agents. Make sure research_agent.py and analysis_agent.py are running!")
+
