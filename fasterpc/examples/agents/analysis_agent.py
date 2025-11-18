@@ -16,3 +16,7 @@ class AnalysisAgent(BaseAgentMethods):
 
         print(f"📊 [Analysis] Analyzing {len(data)} items")
 
+        await asyncio.sleep(1)
+
+        return {
+
