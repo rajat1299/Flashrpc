@@ -10,3 +10,9 @@ class AnalysisAgent(BaseAgentMethods):
 
         super().__init__("Analysis Agent")
 
+
+
+    async def analyze(self, data: list) -> dict:
+
+        print(f"📊 [Analysis] Analyzing {len(data)} items")
+
