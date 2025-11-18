@@ -110,7 +110,11 @@ class WebSocketRpcClient:
 
                  on_disconnect: List[OnDisconnectCallback] = None,
 
-                 keep_alive: float = 0, **kwargs):
+                 keep_alive: float = 0,
+
+                 websocket_client_handler_cls: Type[SimpleWebSocket] = None,
+
+                 **kwargs):
 
         self.methods = methods or RpcMethodsBase()
 
@@ -136,11 +140,13 @@ class WebSocketRpcClient:
 
         self._on_connect = on_connect
 
+        self._websocket_client_handler_cls = websocket_client_handler_cls or WebSocketsClientHandler
+
 
 
     async def __connect__(self):
 
-        raw_ws = WebSocketsClientHandler()
+        raw_ws = self._websocket_client_handler_cls()
 
         self.ws = JsonSerializingWebSocket(raw_ws)
 
