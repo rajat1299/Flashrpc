@@ -30,3 +30,7 @@ def run_server():
 
     uvicorn.run(app, port=9999, log_level="error")
 
+# 3. Client Logic
+
+async def run_client():
+
