@@ -34,3 +34,7 @@ async def run_workflow():
 
         # 2. Task Analyst with Researcher's output
 
+        print(f"\n2️⃣ Sending data to Analyst...")
+
+        analysis = await analyst.other.analyze(data=search_results.result)
+
