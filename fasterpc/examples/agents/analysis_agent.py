@@ -20,3 +20,11 @@ class AnalysisAgent(BaseAgentMethods):
 
         return {
 
+            "summary": "Data indicates positive trend",
+
+            "confidence": 0.95,
+
+            "key_points": [d.upper() for d in data]
+
+        }
+
