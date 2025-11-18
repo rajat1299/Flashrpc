@@ -18,3 +18,7 @@ class DateTimeEncoder(json.JSONEncoder):
 
             return {"__datetime__": obj.isoformat()}
 
+        return super().default(obj)
+
+def datetime_decoder(dct):
+
