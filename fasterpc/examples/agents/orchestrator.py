@@ -44,3 +44,9 @@ async def run_workflow():
 
     print("\n✅ Workflow Complete")
 
+
+
+if __name__ == "__main__":
+
+    try:
+
