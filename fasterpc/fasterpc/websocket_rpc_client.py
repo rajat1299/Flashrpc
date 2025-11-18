@@ -40,6 +40,10 @@ logger = get_logger("RPC_CLIENT")
 
     @property
 
+    def other(self):
+
+        return self.channel.other
+
             return await self._websocket.recv()
 
         except websockets.exceptions.ConnectionClosed:
