@@ -24,3 +24,7 @@ async def run_workflow():
 
         topic = "Quantum Computing"
 
+        print(f"\n1️⃣ Asking Researcher about '{topic}'...")
+
+        search_results = await researcher.other.search(query=topic)
+
