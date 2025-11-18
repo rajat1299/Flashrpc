@@ -46,3 +46,7 @@ async def run_client():
 
         assert response.result == "Hello Agent from Server!"
 
+if __name__ == "__main__":
+
+    # Start server process
+
