@@ -50,3 +50,9 @@ if __name__ == "__main__":
 
     # Start server process
 
+    p = Process(target=run_server)
+
+    p.start()
+
+    
+
