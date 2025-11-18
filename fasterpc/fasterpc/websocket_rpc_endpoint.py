@@ -148,9 +148,9 @@ class WebsocketRPCEndpoint:
 
 
 
-    def register_route(self, router, path="/ws"):
+    def register_route(self, router, path="/ws", dependencies=None):
 
-        @router.websocket(path)
+        @router.websocket(path, dependencies=dependencies)
 
         async def websocket_endpoint(websocket: WebSocket):
 
