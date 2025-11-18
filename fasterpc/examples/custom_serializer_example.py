@@ -10,3 +10,7 @@ from fasterpc.utils import pydantic_serialize
 
 # 1. Define Custom Serializer
 
+class DateTimeEncoder(json.JSONEncoder):
+
+    def default(self, obj):
+
