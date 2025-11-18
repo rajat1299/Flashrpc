@@ -30,6 +30,10 @@ logger = get_logger("RPC_CLIENT")
 
                 await asyncio.sleep(self._keep_alive_interval)
 
+                answer = await self.channel.other._ping_()
+
+                assert answer.result == PING_RESPONSE
+
             return await self._websocket.recv()
 
         except websockets.exceptions.ConnectionClosed:
