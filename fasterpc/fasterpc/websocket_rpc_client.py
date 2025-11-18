@@ -42,6 +42,10 @@ logger = get_logger("RPC_CLIENT")
 
 def isNotForbidden(value) -> bool:
 
+    value = getattr(value, "response", value)
+
+    return not (hasattr(value, "status_code") and value.status_code in (401, 403))
+
     import websockets
 
 except ImportError:
