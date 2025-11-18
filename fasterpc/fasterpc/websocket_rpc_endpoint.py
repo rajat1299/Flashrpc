@@ -68,6 +68,8 @@ class WebsocketRPCEndpoint:
 
                  on_connect: List[Coroutine] = None,
 
+                 on_channel_created: List[Coroutine] = None,
+
                  frame_type: WebSocketFrameType = WebSocketFrameType.Text,
 
                  serializing_socket_cls: Type[SimpleWebSocket] = JsonSerializingWebSocket,
@@ -81,6 +83,8 @@ class WebsocketRPCEndpoint:
         self._on_disconnect = on_disconnect
 
         self._on_connect = on_connect
+
+        self._on_channel_created = on_channel_created
 
         self._frame_type = frame_type
 
@@ -101,6 +105,12 @@ class WebsocketRPCEndpoint:
             simple_websocket = self._serializing_socket_cls(WebSocketSimplifier(websocket, frame_type=self._frame_type))
 
             channel = RpcChannel(self.methods, simple_websocket, sync_channel_id=self._rpc_channel_get_remote_id, **kwargs)
+
+            # Call on_channel_created callback if provided
+
+            if self._on_channel_created:
+
+                await asyncio.gather(*(callback(channel) for callback in self._on_channel_created))
 
             channel.register_connect_handler(self._on_connect)
 
