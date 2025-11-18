@@ -36,6 +36,12 @@ logger = get_logger("RPC_CLIENT")
 
     async def close(self, code: int = 1000):
 
+        if self._websocket: await self._websocket.close(code)
+
+
+
+def isNotForbidden(value) -> bool:
+
     import websockets
 
 except ImportError:
