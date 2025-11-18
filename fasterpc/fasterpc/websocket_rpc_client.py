@@ -26,6 +26,10 @@ logger = get_logger("RPC_CLIENT")
 
         try:
 
+            while True:
+
+                await asyncio.sleep(self._keep_alive_interval)
+
             return await self._websocket.recv()
 
         except websockets.exceptions.ConnectionClosed:
