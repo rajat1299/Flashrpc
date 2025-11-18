@@ -34,3 +34,7 @@ class CustomJsonSocket(JsonSerializingWebSocket):
 
         # Use custom encoder
 
+        return json.dumps(msg.dict(), cls=DateTimeEncoder)
+
+    def _deserialize(self, buffer):
+
