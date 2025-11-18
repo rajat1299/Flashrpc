@@ -21,3 +21,9 @@ from .simplewebsocket import SimpleWebSocket, JsonSerializingWebSocket
 
 
 logger = get_logger("RPC_CLIENT")
+
+
+
+try:
+
+    import websockets
