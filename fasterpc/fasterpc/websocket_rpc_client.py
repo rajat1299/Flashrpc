@@ -30,6 +30,12 @@ logger = get_logger("RPC_CLIENT")
 
         except websockets.exceptions.ConnectionClosed:
 
+            return None
+
+
+
+    async def close(self, code: int = 1000):
+
     import websockets
 
 except ImportError:
