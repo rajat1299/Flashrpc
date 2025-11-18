@@ -37,3 +37,6 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# Documentation (internal)
+FEATURE_COMPARISON.md
+
