@@ -42,3 +42,7 @@ class CustomJsonSocket(JsonSerializingWebSocket):
 
         return json.loads(buffer, object_hook=datetime_decoder)
 
+# This class can now be passed to WebsocketRPCEndpoint or WebSocketRpcClient
+
+# via the serializing_socket_cls parameter.
+
