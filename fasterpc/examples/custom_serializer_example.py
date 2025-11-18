@@ -22,3 +22,7 @@ class DateTimeEncoder(json.JSONEncoder):
 
 def datetime_decoder(dct):
 
+    if "__datetime__" in dct:
+
+        return datetime.datetime.fromisoformat(dct["__datetime__"])
+
