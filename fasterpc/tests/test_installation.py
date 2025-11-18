@@ -14,3 +14,7 @@ from fasterpc import RpcMethodsBase, WebsocketRPCEndpoint, WebSocketRpcClient
 
 class ServerMethods(RpcMethodsBase):
 
+    async def hello(self, name: str) -> str:
+
+        return f"Hello {name} from Server!"
+
