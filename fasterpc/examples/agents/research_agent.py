@@ -20,3 +20,11 @@ class ResearchAgent(BaseAgentMethods):
 
         return [
 
+            f"Source 1 about {query}",
+
+            f"Source 2 about {query}",
+
+            f"Source 3 about {query}"
+
+        ]
+
