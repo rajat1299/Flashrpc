@@ -8,3 +8,5 @@ from .rpc_channel import RpcChannel
 
 from .logger import logging_config, LoggingModes, get_logger
 
+from .proxy_enabled_websocket_client_handler import ProxyEnabledWebSocketClientHandler
+
