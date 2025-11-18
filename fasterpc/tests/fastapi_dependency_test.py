@@ -24,3 +24,7 @@ from fasterpc.utils import gen_uid
 
 PORT = 9998
 
+SECRET = "my-secret-key"
+
+uri = f"ws://localhost:{PORT}/ws"
+
