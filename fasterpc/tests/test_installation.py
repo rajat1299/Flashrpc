@@ -42,3 +42,7 @@ async def run_client():
 
         response = await client.other.hello(name="Agent")
 
+        print(f"RESPONSE: {response.result}")
+
+        assert response.result == "Hello Agent from Server!"
+
