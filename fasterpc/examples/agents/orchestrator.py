@@ -12,3 +12,7 @@ async def run_workflow():
 
     # Connect to agents
 
+    # In a real app, you might use a connection pool or service discovery
+
+    async with WebSocketRpcClient("ws://localhost:9001/ws", RpcMethodsBase()) as researcher, \
+
