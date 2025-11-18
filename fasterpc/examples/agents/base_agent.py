@@ -26,3 +26,7 @@ class BaseAgentMethods(RpcMethodsBase):
 
 def run_agent_server(agent_methods, port):
 
+    app = FastAPI()
+
+    endpoint = WebsocketRPCEndpoint(agent_methods)
+
