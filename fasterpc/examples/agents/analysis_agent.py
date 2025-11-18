@@ -28,3 +28,9 @@ class AnalysisAgent(BaseAgentMethods):
 
         }
 
+
+
+if __name__ == "__main__":
+
+    run_agent_server(AnalysisAgent(), 9002)
+
