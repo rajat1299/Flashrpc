@@ -30,3 +30,7 @@ def datetime_decoder(dct):
 
 class CustomJsonSocket(JsonSerializingWebSocket):
 
+    def _serialize(self, msg):
+
+        # Use custom encoder
+
