@@ -20,3 +20,9 @@ class BaseAgentMethods(RpcMethodsBase):
 
     async def get_info(self):
 
+        return {"name": self.agent_name, "status": "active"}
+
+
+
+def run_agent_server(agent_methods, port):
+
