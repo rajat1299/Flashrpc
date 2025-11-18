@@ -14,7 +14,7 @@ async def run_workflow():
 
     # In a real app, you might use a connection pool or service discovery
 
-    async with                WebSocketRpcClient("ws://localhost:9001/ws", RpcMethodsBase()) as researcher, \
+    async with WebSocketRpcClient("ws://localhost:9001/ws", RpcMethodsBase()) as researcher, \
 
                WebSocketRpcClient("ws://localhost:9002/ws", RpcMethodsBase()) as analyst:
 
