@@ -38,3 +38,7 @@ async def run_client():
 
     await asyncio.sleep(1)
 
+    async with WebSocketRpcClient("ws://localhost:9999/ws", RpcMethodsBase()) as client:
+
+        response = await client.other.hello(name="Agent")
+
