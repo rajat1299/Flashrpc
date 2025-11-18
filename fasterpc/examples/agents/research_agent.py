@@ -10,3 +10,9 @@ class ResearchAgent(BaseAgentMethods):
 
         super().__init__("Research Agent")
 
+
+
+    async def search(self, query: str) -> list:
+
+        print(f"🔍 [Research] Searching for: {query}")
+
