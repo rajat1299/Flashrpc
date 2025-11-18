@@ -78,7 +78,7 @@ async def test_dependency_success(server):
 
         uri, 
 
-        RpcUtilityMethods(), 
+        RpcUtilityMethods(),
 
         extra_headers={"x-token": SECRET}
 
@@ -100,7 +100,7 @@ async def test_dependency_failure(server):
 
             uri, 
 
-            RpcUtilityMethods(), 
+            RpcUtilityMethods(),
 
             extra_headers={"x-token": "wrong-token"}
 
