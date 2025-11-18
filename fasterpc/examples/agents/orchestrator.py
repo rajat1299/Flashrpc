@@ -28,3 +28,9 @@ async def run_workflow():
 
         search_results = await researcher.other.search(query=topic)
 
+        print(f"   Received: {search_results.result}")
+
+
+
+        # 2. Task Analyst with Researcher's output
+
