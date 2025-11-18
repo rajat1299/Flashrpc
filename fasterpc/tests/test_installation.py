@@ -60,3 +60,7 @@ if __name__ == "__main__":
 
         # Run client
 
+        asyncio.run(run_client())
+
+        print("✅ Test Passed Successfully")
+
