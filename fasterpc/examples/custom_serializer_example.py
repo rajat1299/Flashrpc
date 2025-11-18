@@ -38,3 +38,7 @@ class CustomJsonSocket(JsonSerializingWebSocket):
 
     def _deserialize(self, buffer):
 
+        # Use custom decoder
+
+        return json.loads(buffer, object_hook=datetime_decoder)
+
