@@ -34,6 +34,12 @@ logger = get_logger("RPC_CLIENT")
 
                 assert answer.result == PING_RESPONSE
 
+        except asyncio.CancelledError: pass
+
+
+
+    @property
+
             return await self._websocket.recv()
 
         except websockets.exceptions.ConnectionClosed:
