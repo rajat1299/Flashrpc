@@ -18,3 +18,7 @@ class ServerMethods(RpcMethodsBase):
 
         return f"Hello {name} from Server!"
 
+# 2. Setup Server
+
+def run_server():
+
