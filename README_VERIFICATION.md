@@ -43,19 +43,14 @@
     - `WebSocketFrameType.Binary` exists
     - `frame_type` parameter in `WebsocketRPCEndpoint`
 
-## ❌ Features That DON'T Work (As Written in README)
+## ✅ HTTP Proxy Support - NOW FIXED!
 
-1. **HTTP Proxy Support** ❌
-   - **Problem**: README shows `websocket_client_handler_cls` parameter
-   - **Reality**: `WebSocketRpcClient.__init__()` doesn't have this parameter
-   - **Current Code**: Hardcodes `WebSocketsClientHandler()` in `__connect__()` method (line 143)
-   - **Fix Needed**: Add `websocket_client_handler_cls` parameter to `WebSocketRpcClient.__init__()` and use it in `__connect__()`
+1. **HTTP Proxy Support** ✅
+   - **Status**: Fixed! Added `websocket_client_handler_cls` parameter to `WebSocketRpcClient.__init__()`
+   - **Implementation**: Now uses the provided handler class or defaults to `WebSocketsClientHandler`
+   - **Usage**: Works exactly as documented in README
 
-## 🔧 Required Fix
+## ✅ All Features Verified Working
 
-To make HTTP Proxy Support work as documented, we need to:
-
-1. Add `websocket_client_handler_cls` parameter to `WebSocketRpcClient.__init__()`
-2. Use it instead of hardcoding `WebSocketsClientHandler()` in `__connect__()`
-3. Default to `WebSocketsClientHandler` if not provided (backward compatibility)
+**Everything mentioned in the README now works correctly!**
 
