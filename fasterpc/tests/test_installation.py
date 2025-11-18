@@ -22,3 +22,7 @@ class ServerMethods(RpcMethodsBase):
 
 def run_server():
 
+    app = FastAPI()
+
+    endpoint = WebsocketRPCEndpoint(ServerMethods())
+
