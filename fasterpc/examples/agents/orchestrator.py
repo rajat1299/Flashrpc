@@ -38,3 +38,9 @@ async def run_workflow():
 
         analysis = await analyst.other.analyze(data=search_results.result)
 
+        print(f"   Analysis: {analysis.result}")
+
+
+
+    print("\n✅ Workflow Complete")
+
