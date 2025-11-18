@@ -27,3 +27,7 @@ logger = get_logger("RPC_CLIENT")
 try:
 
     import websockets
+
+except ImportError:
+
+    websockets = None
