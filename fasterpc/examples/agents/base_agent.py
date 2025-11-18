@@ -30,3 +30,7 @@ def run_agent_server(agent_methods, port):
 
     endpoint = WebsocketRPCEndpoint(agent_methods)
 
+    endpoint.register_route(app, "/ws")
+
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
