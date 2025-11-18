@@ -10,3 +10,7 @@ from fasterpc import RpcMethodsBase, WebsocketRPCEndpoint
 
 class BaseAgentMethods(RpcMethodsBase):
 
+    def __init__(self, agent_name):
+
+        super().__init__()
+
