@@ -24,7 +24,11 @@ logger = get_logger("RPC_CLIENT")
 
 
 
-try:
+        try:
+
+            return await self._websocket.recv()
+
+        except websockets.exceptions.ConnectionClosed:
 
     import websockets
 
