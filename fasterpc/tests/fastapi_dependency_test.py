@@ -80,7 +80,7 @@ async def test_dependency_success(server):
 
         RpcUtilityMethods(),
 
-        extra_headers={"x-token": SECRET}
+        additional_headers={"x-token": SECRET}
 
     ) as client:
 
@@ -102,7 +102,7 @@ async def test_dependency_failure(server):
 
             RpcUtilityMethods(),
 
-            extra_headers={"x-token": "wrong-token"}
+            additional_headers={"x-token": "wrong-token"}
 
         ) as client:
 
@@ -126,7 +126,17 @@ if __name__ == "__main__":
 
         import time
 
-        time.sleep(1)
+        time.sleep(2)  # Give server more time to start
+
+        
+
+        # Create a simple server fixture-like object
+
+        class ServerFixture:
+
+            pass
+
+        server_fixture = ServerFixture()
 
         
 
@@ -134,7 +144,7 @@ if __name__ == "__main__":
 
         print("Running success test...")
 
-        asyncio.run(test_dependency_success(p))
+        asyncio.run(test_dependency_success(server_fixture))
 
         print("✅ Success test passed")
 
@@ -144,7 +154,7 @@ if __name__ == "__main__":
 
         print("Running failure test...")
 
-        asyncio.run(test_dependency_failure(p))
+        asyncio.run(test_dependency_failure(server_fixture))
 
         print("✅ Failure test passed")
 
@@ -152,7 +162,11 @@ if __name__ == "__main__":
 
     except Exception as e:
 
+        import traceback
+
         print(f"❌ Test failed: {e}")
+
+        traceback.print_exc()
 
     finally:
 
