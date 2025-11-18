@@ -26,3 +26,7 @@ def datetime_decoder(dct):
 
         return datetime.datetime.fromisoformat(dct["__datetime__"])
 
+    return dct
+
+class CustomJsonSocket(JsonSerializingWebSocket):
+
