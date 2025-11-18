@@ -18,3 +18,9 @@ from fasterpc.rpc_methods import RpcUtilityMethods
 
 from fasterpc.websocket_rpc_client import WebSocketRpcClient
 
+from fasterpc.websocket_rpc_endpoint import WebsocketRPCEndpoint
+
+from fasterpc.utils import gen_uid
+
+PORT = 9998
+
