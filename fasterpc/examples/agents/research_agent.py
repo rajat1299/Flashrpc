@@ -16,3 +16,7 @@ class ResearchAgent(BaseAgentMethods):
 
         print(f"🔍 [Research] Searching for: {query}")
 
+        await asyncio.sleep(1)  # Simulate work
+
+        return [
+
