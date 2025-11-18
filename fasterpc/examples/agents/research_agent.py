@@ -28,3 +28,9 @@ class ResearchAgent(BaseAgentMethods):
 
         ]
 
+
+
+if __name__ == "__main__":
+
+    run_agent_server(ResearchAgent(), 9001)
+
