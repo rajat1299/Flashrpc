@@ -26,3 +26,7 @@ def run_server():
 
     endpoint = WebsocketRPCEndpoint(ServerMethods())
 
+    endpoint.register_route(app, "/ws")
+
+    uvicorn.run(app, port=9999, log_level="error")
+
